@@ -8,7 +8,7 @@
 - [集合](DS&ALGO/集合.md)
 - [链表](DS&ALGO/链表.md)
 - [树](DS&ALGO/树.md)
-- [图](DS&ALGO/图.md)
+- [图](DS&ALGO/图论)
 
 
 # 算法思想
