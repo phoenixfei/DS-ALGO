@@ -1,5 +1,6 @@
 from collections import deque
 from functools import cache
+from itertools import accumulate
 from typing import List
 
 
@@ -139,6 +140,18 @@ class Solution:
                     dis[i][j] = dis[x][y] + 1
                     dq.append((i, j))
         return -1
+
+    # https://leetcode.cn/problems/zero-array-transformation-i/description/
+    # 差分数组
+    def isZeroArray(self, nums: List[int], queries: List[List[int]]) -> bool:
+        diff = [0] * (len(nums)+1)
+        for i, j in queries:
+            diff[i] += 1
+            diff[j+1] -= 1
+        for d, x in zip(nums, accumulate(diff)):
+            if d > x:
+                return False
+        return True
 
 
 if __name__ == '__main__':
